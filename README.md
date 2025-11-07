@@ -1,6 +1,6 @@
 # Crypto Prices — React + Vite (Pinned Toolchain)
 
-Practice React app that lists the latest cryptocurrency prices using the Cryptowatch **(cryptowat.ch)** REST API.
+Practice React app that lists the latest cryptocurrency prices using the FreecryptoAPI **(freecryptoapi)** REST API.
 This repo also documents how to scaffold a Vite project with **pinned versions** for reproducible builds.
 api documentation : https://freecryptoapi.com/documentation/
 ---
