@@ -1,42 +1,47 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --bg:#0b1220; --surface:#101a2b; --text:#e7eefc;
+  --muted:#9fb3d1; --up:#24c277; --down:#f04f5a; --border:#243150;
+  --flash: 700ms;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body { background:var(--bg); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Vazirmatn", Arial;text-align: left;justify-content: center; }
+.container { max-width: 960px; margin: 32px auto; padding: 0 16px; }
+.header { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:16px; }
+.header h1 { font-size:1.25rem; margin:0; }
+.filters { display:flex; gap:12px; }
+label { display:flex; gap:6px; align-items:center; color:var(--muted); }
+select { background:var(--surface); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:6px 8px; }
+
+.panel { background:var(--surface); border:1px solid var(--border); border-radius:12px; }
+.panel-hd { display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid var(--border); }
+.panel-hd h2 { margin:0; font-size:1rem; }
+.panel-hd button { background:#17223a; color:var(--text); border:1px solid var(--border); border-radius:8px; padding:6px 10px; cursor:pointer; }
+.panel-hd button:disabled { opacity:.6; cursor:default; }
+.error { color:var(--down); padding:12px 14px; }
+
+.table { display:grid; }
+.thead, .trow {
+  display:grid;
+  grid-template-columns: 1.2fr .9fr 1fr 1fr;
+  gap:12px;
+  padding:12px 14px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.thead { color:var(--muted); border-bottom:1px solid var(--border); }
+.trow { border-bottom:1px solid rgba(36,49,80,.6); }
+.trow:last-child { border-bottom:0; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.up { color: var(--up); }
+.down { color: var(--down); }
+
+.flash-up { animation: flashUp var(--flash) ease; }
+.flash-down { animation: flashDown var(--flash) ease; }
+@keyframes flashUp {
+  from { background: rgba(36, 194, 119, .18); }
+  to   { background: transparent; }
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+@keyframes flashDown {
+  from { background: rgba(240, 79, 90, .18); }
+  to   { background: transparent; }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+.note { margin-top:12px; color:var(--muted); }

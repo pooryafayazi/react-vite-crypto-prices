@@ -2,7 +2,7 @@
 
 Practice React app that lists the latest cryptocurrency prices using the Cryptowatch **(cryptowat.ch)** REST API.
 This repo also documents how to scaffold a Vite project with **pinned versions** for reproducible builds.
-
+api documentation : https://freecryptoapi.com/documentation/
 ---
 
 ## 0) Prerequisites
@@ -147,3 +147,4 @@ If your remote repo already has its own initial commit (e.g., created with a REA
 finally:
 
     npm run dev
+
